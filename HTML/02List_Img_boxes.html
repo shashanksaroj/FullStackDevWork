@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Practice</title>
+    <!-- Best Practice: Add CSS file link here when styling externally -->
+  </head>
+  <body>
+    <!-- IMAGE TAG -->
+    <!-- 'alt' is important for accessibility and SEO -->
+    <img
+      src="digital-shiva_995875-9977.avif"
+      alt="Connection failure - image not loaded"
+      height="250"
+      width="400"
+      class="display-image"
+    />
+
+    <!-- UNORDERED LIST -->
+    <h1>Unordered List</h1>
+    <ul class="unordered-list">
+      <li class="list-item">Hello</li>
+      <li class="list-item">Bhai</li>
+      <li class="list-item">Kya</li>
+    </ul>
+
+    <!-- ORDERED LIST -->
+    <h1>Ordered List</h1>
+    <ol class="ordered-list">
+      <li class="list-item">Get</li>
+      <li class="list-item">Lost</li>
+      <li class="list-item">Man</li>
+    </ol>
+
+    <!-- FORM SECTION -->
+    <!-- 'action' tells where to send data; 'post' keeps it hidden -->
+    <h2>User Registration Form</h2>
+    <form action="#" method="post" id="user-form">
+      <!-- Name Field -->
+      <!-- 'for' should match the 'id' of the input -->
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="username"
+        placeholder="Enter your name"
+        required
+      />
+      <br /><br />
+
+      <!-- Email Field -->
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter a valid email"
+        required
+      />
+      <br /><br />
+
+      <!-- Password Field -->
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Enter password"
+        required
+      />
+      <br /><br />
+
+      <!-- Submit Button -->
+      <input type="submit" value="Submit" class="submit-btn" />
+    </form>
+
+    <br /><br />
+
+    <!-- RADIO BUTTONS -->
+    <!-- All radio buttons for same question must have same 'name' -->
+    <p>Choose an option:</p>
+    <input type="radio" id="option1" name="question1" value="option1" />
+    <label for="option1">Option 1</label>
+
+    <input type="radio" id="option2" name="question1" value="option2" />
+    <label for="option2">Option 2</label>
+
+    <br /><br />
+
+    <!-- SELECT DROPDOWN -->
+    <!-- 'value' is what will be submitted to backend -->
+    <label for="dropdown">Choose an option:</label>
+    <select name="dropdown" id="dropdown" class="dropdown-select">
+      <option value="opt1">OK</option>
+      <option value="opt2">Another Option</option>
+    </select>
+
+    <!--
+📌 IMPORTANT:
+- Use <input type="radio"> when only ONE choice is allowed (same 'name' groups them).
+- Use <input type="checkbox"> when MULTIPLE selections are allowed.
+-->
+
+    <!-- ✅ Use CHECKBOXES if you want user to select MULTIPLE options -->
+    <p>Select multiple topics you're interested in:</p>
+
+    <!-- All checkboxes can share the same name (with [] for array submission) -->
+    <input type="checkbox" id="html" name="topics[]" value="html" />
+    <label for="html">HTML</label>
+
+    <input type="checkbox" id="css" name="topics[]" value="css" />
+    <label for="css">CSS</label>
+
+    <input type="checkbox" id="js" name="topics[]" value="javascript" />
+    <label for="js">JavaScript</label>
+  </body>
+</html>

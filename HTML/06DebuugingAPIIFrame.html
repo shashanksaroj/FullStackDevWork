@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML Theories Tutorial</title>
+</head>
+<body>
+
+  <!-- ======================
+       📘 Paragraph & Emphasis Tags
+       ====================== -->
+  <p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus quod officia, quam quo, 
+    consequatur architecto veniam nisi sunt pariatur soluta quia. Explicabo accusamus illo asperiores 
+    non vitae, quos dolorum velit.
+  </p>
+
+  <!-- ❌ Incorrect Nesting: <em> closed after </strong> -->
+  <!-- ❗ Always close tags in the correct order -->
+  <!-- ❌ <strong><em>Text</strong></em> is invalid -->
+  <p><strong>content here <em>Strong Emphasized</em> what is this?</strong></p>
+
+  <!-- ✅ Correct Nesting -->
+  <p><strong>content here <em>Strong emphasized</em> what is this?</strong></p>
+
+  <br><br>
+
+  <!-- ======================
+       🌐 HTML5 APIs Overview
+       ======================
+    1. Geolocation API – Get user's location (with permission).
+    2. Web Storage API – Store data in browser (local/session storage).
+  -->
+
+  <!-- ======================
+       🎞️ IFRAME Example
+       ====================== -->
+  <h2>IFRAME Usage</h2>
+
+  <!-- Creates a placeholder for embedding another page or resource -->
+  <iframe height="400" width="600" name="myframe" title="Content Frame"></iframe> <br>
+
+  <!-- These links will load inside the iframe -->
+  <a href="video.mp4" target="myframe">Load Video 1</a> |
+  <a href="video.mp4" target="myframe">Load Video 2</a> |
+  <a href="memories-Logo.png" target="myframe">Load Image</a>
+
+  <br><br>
+
+  <!-- ======================
+       ⚠️ Deprecated HTML Elements
+       ====================== -->
+
+  <h2>Deprecated Elements (No Longer Recommended)</h2>
+
+  <!-- ❌ <center> is deprecated – use CSS instead -->
+  <center>A centered content (Deprecated – use CSS instead)</center> <br>
+
+  <!-- ❌ <font> is deprecated – use CSS for color and size -->
+  <font size="4" color="red">This is red styled (Deprecated)</font> <br>
+
+  <!-- ❌ <strike> is deprecated – use <s> or CSS instead -->
+  <strike>This content is struck through (Deprecated)</strike> <br>
+
+  <!-- ❌ Use CSS or semantic tags instead of <big> and <small> -->
+  <big>Big (Deprecated)</big> <br>
+  <small>Small</small>
+
+  <!-- ❌ <frame> and <frameset> are completely deprecated in HTML5 -->
+  <frame></frame> <frameset></frameset> <br>
+
+  <!-- ❌ <applet> is obsolete – replaced by JavaScript and HTML5 -->
+  <applet></applet>
+
+  <br><br>
+
+  <!-- ======================
+       🗃️ Web Storage Notes
+       ======================
+    1. localStorage
+      - Data persists even after browser is closed.
+      - Shared across all tabs of the same origin.
+      - Limit: ~5MB
+      - Use case: Saving user preferences, themes, etc.
+
+    2. sessionStorage
+      - Data is cleared when the page session ends.
+      - Tab-specific storage.
+      - Limit: ~5MB
+      - Use case: Temporary form state or per-tab data.
+  -->
+
+  <!-- Final spacing -->
+  <br><br><br><br><br><br>
+
+</body>
+</html>

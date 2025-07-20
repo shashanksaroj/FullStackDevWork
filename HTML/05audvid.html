@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Audio & Video Demo</title>
+</head>
+<body>
+
+  <!-- ============================
+       🎵 HTML5 Audio Player
+       ============================ -->
+  <h2>Audio: Mohan Veena (Indian Guitar)</h2>
+
+  <audio controls loop>
+    <!-- Best practice: Provide type for better browser support -->
+    <source src="mohanveena-indian-guitar-374179.mp3" type="audio/mpeg" />
+    
+    <!-- Fallback text -->
+    Your browser does not support the audio element.
+  </audio>
+
+  <br><br>
+
+  <!-- ============================
+       🎥 HTML5 Video Player
+       ============================ -->
+  <h2>Video: Sample Clip</h2>
+
+  <video 
+    src="283431_small.mp4" 
+    controls 
+    loop 
+    muted 
+    height="400" 
+    width="1000"
+    poster="thumbnail.jpg" <!-- Optional: a placeholder image -->
+  >
+    <!-- Fallback text -->
+    Your browser does not support the video tag.
+  </video>
+
+</body>
+</html>
