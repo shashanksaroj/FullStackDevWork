@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Functions in JavaScript</title>
+    <style>
+        .container {
+            font-size: 20px;
+            background-color: #b18484;
+            border: 2px solid grey;
+            padding: 20px;
+            margin: 4px;
+            text-align: center;
+        }
+
+        #time {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        Time now is <span id="time"> </span>
+    </div>
+
+    <script>
+        // ------------------------------
+        // setTimeout() → Runs a function ONCE after a delay.
+        // Syntax: setTimeout(function, delay_in_ms, arg1, arg2, ...)
+        // ------------------------------
+
+        function greet(msg, msg2) {
+            console.log("Hello everyone " + msg + msg2);
+        }
+
+        // Example of setTimeout (uncomment to see)
+        // let timeOut = setTimeout(greet, 3000, " Welcome", " to the course");
+        // console.log("setTimeout ID is: ", timeOut);
+        // clearTimeout(timeOut);  // Cancels the timeout before it executes
+
+        // ------------------------------
+        // setInterval() → Repeats function at every interval.
+        // Syntax: setInterval(function, interval_in_ms, arg1, arg2, ...)
+        // ------------------------------
+
+        // Example of setInterval (uncomment to see)
+        // let intervalId = setInterval(greet, 3000, " Welcome", " to the course");
+        // console.log("setInterval ID is: ", intervalId);
+        // clearInterval(intervalId);  // Stops the interval (if needed)
+
+        // ------------------------------
+        // Practical Example: Digital Clock
+        // ------------------------------
+        function displayTime() {
+            let time = new Date();  // Get current Date & Time
+            console.log(time);      // Print to console
+            document.getElementById('time').innerHTML = time;  // Update HTML content
+        }
+
+        // Call displayTime() every 1000ms (1 second)
+        setInterval(displayTime, 1000);
+
+    </script>
+
+</body>
+</html>

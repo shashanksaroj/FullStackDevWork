@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Listeners in JavaScript</title>
+  <style>
+    #btn {
+      padding: 10px 14px;
+      background-color: rgb(50, 50, 141);
+      color: white;
+      border: 2px solid grey;
+      border-radius: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>This is our heading</h1>
+  <p id="paragraph">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, doloremque harum quia ex voluptatem animi impedit
+    libero ratione aspernatur, odit aut ipsam delectus modi cupiditate! Quidem quasi aperiam optio veniam voluptatum
+    eius, suscipit eveniet architecto quod velit quaerat magni minima corrupti? Porro labore ad natus deserunt vero?
+    Quod ipsa eaque sapiente assumenda libero odio dolorem impedit rerum corrupti molestias, dolore velit rem ab nisi?
+    Eum fugit iure culpa! Ducimus tenetur amet, laudantium libero sint officiis accusantium odio. Facilis ullam odio
+    voluptates suscipit, eius recusandae rem doloremque voluptate harum beatae veritatis quam, eos consectetur alias
+    dolores vel non eum. Dolore, ipsum?
+  </p>
+
+  <button id="btn" onclick="toggleHide()">Show/Hide</button>
+
+  <script>
+    // -----------------------------
+    // EVENT LISTENER BASICS
+    // -----------------------------
+    // Syntax: element.addEventListener('eventType', callbackFunction);
+    // Adds an event listener to an element.
+
+    let paragraph = document.getElementById('paragraph');
+
+    // MOUSEOVER EVENT
+    paragraph.addEventListener('mouseover', function () {
+      console.log('Mouse is inside the paragraph');
+    });
+
+    // MOUSEOUT EVENT
+    paragraph.addEventListener('mouseout', function () {
+      console.log('Mouse left the paragraph');
+    });
+
+    // -----------------------------
+    // FUNCTION TO TOGGLE HIDE/SHOW PARAGRAPH
+    // -----------------------------
+    function toggleHide() {
+      let btn = document.getElementById('btn');
+      let paragraph = document.getElementById('paragraph');
+
+      if (paragraph.style.display != 'none') {
+        paragraph.style.display = 'none'; // Hides the paragraph
+        btn.innerText = 'Show'; // Changes button text
+      } else {
+        paragraph.style.display = 'block'; // Shows the paragraph
+        btn.innerText = 'Hide'; // Changes button text
+      }
+    }
+
+    // -----------------------------
+    // INTERVIEW IMPORTANT — EVENT TYPES:
+    // -----------------------------
+    // Mouse Events:
+    // 1. click           → When an element is clicked.
+    // 2. dblclick        → When an element is double-clicked.
+    // 3. contextmenu     → When right-click menu is opened.
+    // 4. mouseover       → When mouse enters an element.
+    // 5. mouseout        → When mouse leaves an element.
+    // 6. mousedown       → When mouse button is pressed.
+    // 7. mouseup         → When mouse button is released.
+    // 8. mousemove       → When mouse moves over an element.
+
+    // Keyboard Events:
+    // 1. keydown         → When a key is pressed.
+    // 2. keyup           → When a key is released.
+    // 3. keypress        → When key is pressed (deprecated).
+
+    // Form Events:
+    // 1. submit          → When a form is submitted.
+    // 2. focus           → When an element gains focus.
+    // 3. blur            → When an element loses focus.
+    // 4. change          → When value of an input element changes.
+
+    // Document Events:
+    // 1. DOMContentLoaded → When HTML is completely loaded and parsed.
+    // 2. load             → When page including resources (images) is loaded.
+    // 3. resize           → When browser window is resized.
+    // 4. scroll           → When user scrolls the page.
+
+    // Animation/Transition Events:
+    // 1. transitionend    → When a CSS transition ends.
+    // 2. animationend     → When a CSS animation ends.
+
+  </script>
+
+</body>
+
+</html>

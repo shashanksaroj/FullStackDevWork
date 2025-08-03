@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div id="main" class="container">
+        <ul id="nav">
+            <li>Home</li>
+            <li>About</li>
+            <li>Privacy</li>
+            <li>Contact us</li>
+        </ul>
+    </div>
+
+    <div class="container"></div>
+
+    <script>
+        // -------------------------------
+        // What is DOM? (Definition)
+        // -------------------------------
+        // DOM (Document Object Model) is a tree-like structure
+        // created by the browser to represent HTML elements.
+        // It allows JavaScript to access, modify, and interact with
+        // HTML content dynamically.
+        // In simple words — "DOM connects JS with HTML".
+
+        // -------------------------------
+        // Key Points:
+        // 1. DOM represents every HTML element as an object.
+        // 2. Using JavaScript, we can SELECT and MODIFY these elements.
+        // 3. DOM methods help in reading and updating page content, structure, and styles.
+        // -------------------------------
+
+        // -------------------------------
+        // getElementById()
+        // -------------------------------
+        // Selects ONE element by its ID.
+        // Returns the element node.
+        let main = document.getElementById('main');
+        console.log("getElementById('main') returns:", main);
+
+        let nav = document.getElementById('nav');
+        console.log("getElementById('nav') returns:", nav);
+
+        // -------------------------------
+        // getElementsByClassName()
+        // -------------------------------
+        // Selects ALL elements with a given class.
+        // Returns an HTMLCollection (array-like object).
+        let containers = document.getElementsByClassName('container');
+        console.log("getElementsByClassName('container') returns:", containers);
+        // Note: To access individual, use containers[0], containers[1], etc.
+
+        // -------------------------------
+        // querySelector()
+        // -------------------------------
+        // Selects the FIRST matching element.
+        // Can use any CSS selector (#id, .class, tag)
+        let sel = document.querySelector('.container');  // First element with class 'container'
+        console.log("querySelector('.container') returns:", sel);
+
+        let sel2 = document.querySelector('#nav');        // First element with id 'nav'
+        console.log("querySelector('#nav') returns:", sel2);
+
+        // -------------------------------
+        // querySelectorAll()
+        // -------------------------------
+        // Selects ALL matching elements.
+        // Returns a NodeList (array-like)
+        let sel3 = document.querySelectorAll('#nav > li'); // All <li> inside #nav
+        console.log("querySelectorAll('#nav > li') returns:", sel3);
+        // Can loop through sel3 to access each <li> item
+
+    </script>
+
+</body>
+</html>

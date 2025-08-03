@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loops in JavaScript</title>
+</head>
+
+<body>
+
+  <div class="container">Our webpage</div>
+
+  <script>
+    // ----------------------------------------
+    // FOR LOOP
+    // ----------------------------------------
+    console.log("---- For Loop ----");
+    for (let i = 2; i < 5; i++) {
+      console.log("Value of i is: " + i);
+    }
+    // Output: 2, 3, 4
+
+    // ----------------------------------------
+    // FOR EACH LOOP (on Arrays)
+    // ----------------------------------------
+    let subjects = ["CN", "DBMS", "Automata", "Cloud Computing", "HTML"];
+    console.log("\n---- ForEach Loop ----");
+    subjects.forEach(function (element) {
+      console.log("My Subject: " + element);
+    });
+
+
+    for (let i = 0; i < subjects.length; i++) {
+      console.log(`Subject at index ${i} is ${subjects[i]}`);
+    }
+
+
+
+    // Output: Each subject printed one by one
+
+    // ----------------------------------------
+    // FOR...OF LOOP (for Arrays & Iterables)
+    // ----------------------------------------
+    console.log("\n---- For...of Loop ----");
+    for (let element of subjects) {
+      console.log("My Subject (FOR OF): " + element);
+    }
+    // Output: Same as forEach but syntax is cleaner
+
+    // ----------------------------------------
+    // FOR...IN LOOP (for Objects)
+    // ----------------------------------------
+    let employee = {
+      name: "Arfain",
+      salary: 100,
+      relocate: true,
+    };
+    console.log("\n---- For...in Loop ----");
+    for (let key in employee) {
+      console.log(`The ${key} of employee is ${employee[key]}`);
+    }
+    // Output: Prints key-value pairs of object
+
+    // ----------------------------------------
+    // WHILE LOOP
+    // ----------------------------------------
+    console.log("\n---- While Loop ----");
+    let i = 0;
+    while (i < 3) {
+      console.log(`${i} is less than 3`);
+      i++;
+    }
+    // Output: 0, 1, 2
+
+    // ----------------------------------------
+    // DO-WHILE LOOP
+    // ----------------------------------------
+    console.log("\n---- Do-While Loop ----");
+    let j = 100;
+    do {
+      console.log(`${j} is less than 5, we are in do-while`);
+    } while (j < 5);
+    // Output: This will run once even though condition is false
+
+  </script>
+
+</body>
+
+</html>

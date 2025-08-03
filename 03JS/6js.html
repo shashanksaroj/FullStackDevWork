@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert, Prompt, Confirm</title>
+</head>
+<body>
+
+    <div class="container">This is a message</div>
+
+    <script>
+        // ----------------------------------------
+        // ALERT BOX
+        // ----------------------------------------
+        // Displays a simple message to the user.
+        alert("Download complete");  // This will show first
+
+        // ----------------------------------------
+        // PROMPT BOX
+        // ----------------------------------------
+        // Prompts user to input a value.
+        let name = prompt("Enter your name:", "Default Name");
+
+        if (name !== null) {
+            console.log("Hello, " + name + "!"); // Will print the entered name
+        } else {
+            console.log("Prompt was cancelled."); // If user cancels
+        }
+
+        // ----------------------------------------
+        // CONFIRM BOX
+        // ----------------------------------------
+        // Asks user to confirm an action (OK or Cancel).
+        let deletePost = confirm("Do you really want to delete this post?");
+
+        if (deletePost) {
+            console.log("Your post has been deleted successfully");
+        } else {
+            console.log("Your post cannot be deleted");
+        }
+
+    </script>
+
+</body>
+</html>
