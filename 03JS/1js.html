@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics</title>
+    <script>
+        // Variable Declarations
+        var a = 12;                // Integer
+        var b = "MyName";          // String
+        var c = 13.736;            // Floating-point number
+
+        // String concatenation with number - number 'a' gets converted to string
+        console.log(b + a);        // Output: MyName12
+
+        // Printing a floating-point number
+        console.log(c);            // Output: 13.736
+
+        // Operators in JavaScript:
+        // Unary Operator - operates on a single operand
+        // Example: Negating 'c'
+        // c = -c; console.log(c);
+
+        // Binary Operator - operates on two operands
+        // Adding 'a' to 'c'
+        c = c + a;
+        console.log(c);            // Output: 25.736
+
+        // Arithmetic Operations Example
+        var num1 = 10;
+        var num2 = 12;
+
+        console.log("The value of num1 + num2 is " + (num1 + num2)); // 22
+        console.log("The value of num1 - num2 is " + (num1 - num2)); // -2
+        console.log("The value of num1 * num2 is " + (num1 * num2)); // 120
+        console.log("The value of num1 / num2 is " + (num1 / num2)); // 0.833...
+        console.log("The value of num1 % num2 is " + (num1 % num2)); // 10
+        console.log("The value of num1 ** num2 is " + (num1 ** num2)); // 10^12
+
+        // Modulus operator (%) returns remainder
+        // Examples:
+        // 4 % 2 = 0
+        // 4 % 3 = 1
+        // 2 % 4 = 2
+
+        // String Operations
+        var string = "STRI'NG";                  // String with a single quote inside
+        var name = "Cat";                        // Simple string variable
+        var message = "This is a JS course";     // Message string
+
+        // Concatenation using + operator
+        console.log(string + " " + name + " " + message);
+
+        // Template literals for cleaner string interpolation
+        var temp = `${name} is a good pet. ${message}`;
+        console.log(temp);
+
+        // String length property
+        var len = name.length;
+        console.log(`Length of the name is \t ${len}`); // \t adds a tab space
+
+        // Creating a String object using 'new' keyword (Not recommended in practice)
+        var y = new String("this");
+        console.log(y); // Outputs String Object representation
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>This is a paragraph</h1>
+        <!-- You can add buttons or inputs here to interact with JS dynamically -->
+    </div>
+</body>
+</html>

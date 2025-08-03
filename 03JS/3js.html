@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope in JavaScript</title>
+</head>
+<body>
+
+    <script>
+        // Global Scope variable
+        let age = 99;
+
+        // Decide if the person can vote based on 'age'
+        if (age < 12) {  // Condition is false because age=99
+            // 'c' is block-scoped to this 'if' block (not accessible outside)
+            let c = 10;
+            console.log("Age is too less to vote");
+        }
+        // This else-if will not execute because condition is same and false
+        else if (age < 12) {
+            console.log("You cannot vote");
+        }
+        // 'else' will execute because no above conditions were true
+        else {
+            console.log("You can vote");  // Output: You can vote
+        }
+
+        // Uncommenting below line will cause error because 'c' is not defined in this scope
+        // console.log(c);  // ❌ ReferenceError: c is not defined
+
+        // Demonstrating 'switch-case' statement
+        let cups = 10;
+        switch (cups) {
+            case 10:
+                console.log("Value of cups is 10");  // Output: Value of cups is 10
+
+                // 'd' is block scoped to this case block, accessible here only
+                let d = 121;
+                console.log("Variable d inside case 10 block: " + d);  // Output: 121
+                break;
+
+            case 41:
+                console.log("Value of cups is 41");
+                break;
+
+            case 42:
+                console.log("Value of cups is 42");
+                break;
+
+            default:
+                console.log("Unable to find number of cups");
+                break;
+        }
+
+        // Uncommenting below line will cause error because 'd' is block scoped to case 10 only
+        // console.log(d);  // ❌ ReferenceError: d is not defined
+
+    </script>
+
+</body>
+</html>

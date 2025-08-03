@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript String Methods</title>
+</head>
+<body>
+
+    <script>
+        // Declaring a string variable
+        var str = "This is is is is a String";
+        console.log(str);  // Output: This is is is is  a String
+
+        // indexOf() returns the index of first occurrence of a substring
+        var position = str.indexOf('is');
+        console.log("First occurrence of 'is' is at index: " + position);  // 2
+
+        // lastIndexOf() returns the index of last occurrence of a substring
+        var position2 = str.lastIndexOf('is');
+        console.log("Last occurrence of 'is' is at index: " + position2);   // 11
+
+        // slice(start, end): Extracts part of a string from index start to end-1
+        var substr = str.slice(1, 7);
+        console.log("Using slice(1, 7): " + substr);  // 'his is'
+
+        // substr(start, length): Extracts 'length' characters from index start
+        var substr1 = str.substr(1, 3);
+        console.log("Using substr(1, 3): " + substr1);  // 'his'
+
+        // replace(): Replaces the first occurrence of a substring
+        var replaced = str.replace('String', 'Arfain');
+        console.log("After replace(): " + replaced);  // This is is is is  a Arfain
+
+        // toUpperCase(): Converts string to uppercase
+        console.log("Uppercase: " + str.toUpperCase());
+
+        // toLowerCase(): Converts string to lowercase
+        console.log("Lowercase: " + str.toLowerCase());
+
+        // concat(): Joins two strings
+        var newString = str.concat(' New words');
+        console.log("After concat(): " + newString);
+
+        // Whitespace Handling
+        var strWithWhiteSpaces = "        This contains spaces      ";
+        console.log("Original with spaces: [" + strWithWhiteSpaces + "]");
+
+        // trim(): Removes whitespaces from both ends
+        console.log("After trim(): [" + strWithWhiteSpaces.trim() + "]");
+
+        // charAt(index): Returns character at specified index
+        var char = str.charAt(3);
+        console.log("Character at index 3: " + char);  // 's'
+
+        // charCodeAt(index): Returns Unicode of character at specified index
+        var char2 = str.charCodeAt(3);
+        console.log("Unicode of character at index 3: " + char2);  // Unicode of 's' is 115
+
+        // Accessing characters using array indexing (str[5])
+        console.log("Character at index 5 (using str[5]): " + str[5]);  // 'i'
+
+        // Declaring constant variable (const)
+        const a = "this is constant content";
+        console.log("Constant a: " + a);
+
+        // a = "this can be changed"; // ❌ This will throw error because 'a' is const
+
+        // Declaring block-scoped variable using let
+        let b = "a";
+        console.log("Variable b: " + b);
+
+        // b can be reassigned because it's declared with let
+        b = "new value of b";
+        console.log("Updated Variable b: " + b);
+
+    </script>
+
+    <p>This is a paragraph in HTML</p>
+
+</body>
+</html>

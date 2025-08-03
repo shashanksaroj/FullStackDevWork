@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Data Types</title>
+</head>
+
+<body>
+
+  <h1>
+
+    <!-- Linking External JS File -->
+    <script src="function.js"></script>
+  </h1>
+
+
+  <h2>Check Console for Output</h2>
+
+  <script>
+    // -------------------------------
+    // PRIMITIVE DATA TYPES
+    // -------------------------------
+
+    let num = 34;                      // Number
+    let str = "Hello, World!";         // String
+    let bool = true;                   // Boolean
+    let n = null;                      // Null
+    let u = undefined;                 // Undefined
+
+    console.log("Primitive Data Types:");
+    console.log(typeof num, num);      // Output: number 34
+    console.log(typeof str, str);      // Output: string Hello, World!
+    console.log(typeof bool, bool);    // Output: boolean true
+    console.log(typeof n, n);          // Output: object null  (quirk in JS)
+    console.log(typeof u, u);          // Output: undefined undefined
+
+    // -------------------------------
+    // NON-PRIMITIVE DATA TYPES
+    // -------------------------------
+
+    // Objects: Key-Value Pairs
+    let person = {
+      name: "Arfain",
+      age: 25,
+      isEmployed: true,
+      "home city": "Delhi" // keys with space need quotes
+    };
+
+    console.log("\nObject Data Type:");
+    console.log(person);
+    console.log(person.name);                  // Output: Arfain
+    console.log(person["age"]);                // Output: 25
+    console.log(person["home city"]);          // Output: Delhi
+
+    // Dynamically Adding New Key
+    person.salary = 50000;
+    console.log(person.salary);                // Output: 50000
+
+    // Arrays: Ordered List of Elements
+    let subjects = ["CN", "DBMS", "SE", "DSA"];
+    console.log("\nArray Data Type:");
+    console.log(subjects);                     // Output: ["CN", "DBMS", "SE", "DSA"]
+    console.log(subjects[2]);                  // Output: SE
+    console.log("Array Length:", subjects.length); // Output: 4
+
+    // Array Methods Example
+    subjects.push("OS");                       // Adds 'OS' at end
+    console.log(subjects);                     // Output: ["CN", "DBMS", "SE", "DSA", "OS"]
+    subjects.sort();                           // Lexicographically sorts array
+    console.log("Sorted Subjects:", subjects); // Output: ["CN", "DBMS", "DSA", "OS", "SE"]
+
+    // Array using Constructor
+    let numbers = new Array(5, 2, 9, undefined, null);
+    console.log("\nArray Created using Constructor:");
+    console.log(numbers);                      // Output: [5, 2, 9, undefined, null]
+
+    // -------------------------------
+    // TYPEOF OPERATOR DEMO
+    // -------------------------------
+    console.log("\nType Checking using typeof:");
+    console.log(typeof subjects);              // Output: object (arrays are technically objects)
+    console.log(Array.isArray(subjects));      // Output: true (proper way to check arrays)
+
+    console.log(typeof person);                // Output: object
+    console.log(typeof null);                  // Output: object (JavaScript quirk)
+    console.log(typeof undefined);             // Output: undefined
+
+    // -------------------------------
+    // SPECIAL CASE: Functions
+    // -------------------------------
+    function greet() {
+      console.log("Hello from function!");
+    }
+
+    console.log("\nFunction Data Type:");
+    console.log(typeof greet);                 // Output: function
+
+  </script>
+</body>
+
+</html>
