@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Form</title>
+</head>
+<body>
+
+<!-- ==============================
+     CONTAINER FOR FORM
+     ============================== -->
+<div class="container">
+
+    <!-- Form starts -->
+    <form action="">
+        
+        <!-- Main Heading -->
+        <h1 class="main-heading">Payment Form</h1>
+        
+        <!-- Section: Contact Information -->
+        <h2>Contact Information</h2>
+        <p>Required fields are followed by *</p>
+
+        <!-- Name Input -->
+        <p>
+            Name: * 
+            <input type="text" name="name" required placeholder="Enter your name">
+        </p>
+
+        <!-- Gender Selection (Radio Buttons) -->
+        <fieldset>
+            <legend>Gender*</legend>
+            <p>
+                Male 
+                <input type="radio" name="gender" id="male" required>
+                
+                Female 
+                <input type="radio" name="gender" id="female" required>
+            </p>
+        </fieldset>
+
+        <!-- Address (Multiline Input) -->
+        <p>
+            Address: 
+            <textarea name="address" id="address" cols="45" rows="10"
+                      placeholder="Enter your Full Address"></textarea>
+        </p>
+
+        <!-- Email Input -->
+        <p>
+            Email: * 
+            <input type="email" id="email" required placeholder="Please Enter your Email">
+        </p>
+
+        <!-- Pincode -->
+        <p>
+            Pincode: 
+            <input type="number" name="pincode" id="pincode" required
+                   placeholder="Enter your pincode">
+        </p>
+
+        <!-- Section: Payment Information -->
+        <h2>Payment Information</h2>
+
+        <!-- Card Type Dropdown -->
+        <p>
+            Card Type: *
+            <select name="card_type" id="card_type" required>
+                <option value="">--Select a Card Type--</option>
+                <option value="Visa">Visa</option>
+                <option value="Rupay">Rupay</option>
+                <option value="MasterCard">MasterCard</option>
+            </select>
+        </p>
+
+        <!-- Card Number -->
+        <p>
+            Card Number* 
+            <input type="number" name="card_Number" id="card_Number" required>
+        </p>
+
+        <!-- Expiration Date -->
+        <p>
+            Expiration Date: * 
+            <input type="date" name="exp_date" id="exp_date" required>
+        </p>
+
+        <!-- CVV -->
+        <p>
+            CVV* 
+            <input type="password" name="cvv" id="cvv" required>
+        </p>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Pay Now">
+
+    </form>
+    <!-- Form ends -->
+
+</div>
+
+</body>
+</html>
+
+<!-- ==============================
+     CSS STYLING
+     ============================== -->
+<style type="text/css">
+/* Universal box-sizing: Ensures padding/border do not affect width */
+* {
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: cursive;      /* Fancy handwriting-style font */
+    margin: 15px 30px;         /* Outer spacing from edges of browser */
+    font-size: 15px;           /* Base text size */
+    padding: 8px;
+}
+
+/* Form container */
+.container {
+    background-color: rgba(163, 162, 162, 0.538); /* Light gray with transparency */
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgray;
+    border-radius: 4px;       /* Slightly rounded corners */
+}
+
+/* Input fields, dropdown, and textarea - unified style */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;              /* Full width inside container */
+    padding: 12px;            /* Inner space inside input box */
+    border: 1px solid #ccc;   /* Light gray border */
+    border-radius: 5px;       /* Rounded corners */
+}
+
+/* Fieldset styling (for gender) */
+fieldset {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Centering the main heading */
+.main-heading {
+    text-align: center;
+}
+
+/* Submit button styling */
+input[type="submit"] {
+    background-color: rgb(51, 218, 162); /* Teal background */
+    color: white;                        /* White text */
+    padding: 12px 20px;                   /* Bigger clickable area */
+    border-radius: 4px;
+    cursor: pointer;                      /* Pointer cursor on hover */
+    width: 100%;
+}
+
+/* Submit button hover effect */
+input[type="submit"]:hover {
+    background-color: aquamarine;
+}
+</style>

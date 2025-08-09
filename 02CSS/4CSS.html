@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Tutorial Examples</title>
+    <style>
+        /* ================================
+           SECTION 1: Multiple CSS rules for same selector
+           The LAST one wins because of the "Cascading" in CSS
+        ================================= */
+        h1 {
+            color: red;          /* This will be overridden by the next */
+        }
+        h1 {
+            color: blueviolet;   /* This will be overridden by the next */
+        }
+        h1 {
+            color: aquamarine;   /* ✅ This is the final applied color */
+        }
+
+        /* ================================
+           SECTION 2: Class selectors
+           When multiple styles target the same element,
+           the last matching rule wins (same specificity)
+        ================================= */
+        .classname1 {
+            color: rgb(186, 10, 10); /* Overridden */
+        }
+        .classname1 {
+            color: blue;             /* ✅ Final color */
+        }
+
+        /* ================================
+           SECTION 3: Inherit / Initial / Unset
+        ================================= */
+        body {
+            color: blue; /* Default text color for the whole page */
+        }
+        .class-1 a {
+            color: inherit; /* Takes the parent’s color (from body or parent element) */
+        }
+        .class-2 a {
+            color: initial; /* Resets to browser's default link color */
+        }
+        .class-3 a {
+            color: unset;   /* Acts like 'inherit' for inherited properties, else 'initial' */
+        }
+
+        /* ================================
+           SECTION 4: !important usage
+           Overrides everything unless another !important is applied later
+        ================================= */
+        .important {
+            color: rgb(47, 170, 68) !important;
+        }
+
+        /* ================================
+           SECTION 5: Box & Image Styling
+        ================================= */
+        .box {
+            border: 4px solid black;
+            margin: 10px;
+        }
+        img {
+            object-fit: cover; /* Ensures image fills the box without distortion */
+        }
+
+        /* Example overflow box (commented) */
+        /*
+        .overflow11 {
+            border: 3px solid black;
+            font-size: 200%;
+            width: 70px;
+            overflow: auto; // Scrollbar appears if content overflows
+        }
+        */
+    </style>
+</head>
+<body>
+
+    <!-- ================================
+         SECTION 1: Heading color cascade
+    ================================= -->
+    <h1>Our Heading</h1>
+    <!-- Even though the first two CSS rules said red & blueviolet,
+         aquamarine is applied because it was last in CSS -->
+
+    <!-- ================================
+         SECTION 2: Class selector override
+    ================================= -->
+    <ul id="cool-drinks">
+        <li>Sprite</li>
+        <li class="classname1">List 2 (Class applied)</li>
+        <li>List 3</li>
+    </ul>
+
+    <!-- ================================
+         SECTION 3: Inherit / Initial / Unset
+    ================================= -->
+    <ul>
+        <li>Default <a href="#">Link</a> Color</li>
+        <li class="class-1">Inherited <a href="#">Link</a> color</li>
+        <li class="class-2">Initial <a href="#">Link</a> color</li>
+        <li class="class-3">Unset <a href="#">Link</a> color</li>
+    </ul>
+
+    <!-- ================================
+         SECTION 4: !important demo
+    ================================= -->
+    <p class="important" style="color: red;">This is green (due to !important)</p>
+
+    <!-- ================================
+         SECTION 5: Box & Image
+    ================================= -->
+    <div class="wrapper">
+        <div class="box">
+            <img src="memories-Logo.png" alt="Network error" height="100px" width="100px">
+        </div>
+    </div>
+
+</body>
+</html>

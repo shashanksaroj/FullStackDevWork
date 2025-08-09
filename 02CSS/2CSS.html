@@ -1,0 +1,95 @@
+
+<html>
+<head>
+    <title>CSS Background & Text Styling</title>
+</head>
+<body>
+
+    <!-- Heading -->
+    <h1>Our Heading</h1>
+
+    <!-- Paragraph with background image styling -->
+    <p class="background">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        <!-- (Long dummy text for demo) -->
+    </p>
+
+</body>
+</html>
+
+<!-- ✅ Internal CSS Styling -->
+<style type="text/css">
+
+/* ===============================
+   🎨 Background Styling for .background class
+   =============================== */
+.background {
+    /* Text color (deep indigo) */
+    color: #2d2b7e;
+
+    /* Background image for the paragraph */
+    background-image: url("memories-Logo.png");
+
+    /* Set element size — be careful, this can make huge boxes */
+    height: 1000px;
+    width: 1000px;
+
+    /* No repeating image tiles */
+    background-repeat: no-repeat;
+
+    /* Fix background to viewport (doesn’t scroll with content) */
+    background-attachment: fixed;
+
+    /* Position background image in center */
+    background-position: center;
+}
+
+/* ===============================
+   📝 Heading Styling
+   =============================== */
+h1 {
+    font-family: 'Fuggles', Times, serif;  /* Fallback fonts included */
+    font-size: 200%;                       /* Relative to default size */
+    font-weight: 300%;                     /* ❌ This is invalid — should use numbers (100–900) */
+    text-align: justify;                   /* Justifies heading text */
+    text-decoration: none;                 /* Removes underline */
+    text-indent: 0;                         /* No extra space before text */
+    text-shadow: 2px 3px rgb(181, 14, 14);  /* Shadow: X offset, Y offset, color */
+}
+
+/* ===============================
+   ✍ Paragraph Styling
+   =============================== */
+p {
+    /* First line indentation */
+    text-indent: 3rem;
+
+    /* Spacing between letters & words */
+    letter-spacing: 0.1rem;
+    word-spacing: 0.1rem;
+
+    /* Space between lines */
+    line-height: 2;
+
+    /* Example text shadow syntax: text-shadow: x-offset y-offset blur color */
+}
+
+/* ===============================
+   📦 Paragraph Short-hand Properties
+   (Overrides above p styling)
+   =============================== */
+p {
+    /* Short-hand background: color image repeat position */
+    background: #ffffff url("") no-repeat left top;
+
+    /* Short-hand font: style weight size family */
+    font: italic bold 12px Arial, sans-serif;
+
+    /* Border: width style color */
+    border: 10px solid #2d2b7e;
+
+    /* Margin: top right bottom left */
+    margin: 10px 5px 10px 5px;
+}
+
+</style>

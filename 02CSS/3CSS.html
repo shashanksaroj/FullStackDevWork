@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Tutorial Example</title>
+    <style type="text/css">
+        /* ===== Box Styling ===== */
+        /* Both boxes share these properties */
+        .box1, .box2 {
+            height: 100px;
+            width: 100px;
+        }
+
+        /* Box 1: has margin outside, no padding inside */
+        .box1 {
+            margin: 30px; /* Space outside the box */
+            background-color: aquamarine;
+        }
+
+        /* Box 2: has padding inside, no margin */
+        .box2 {
+            padding: 30px; /* Space inside the box */
+            background-color: blue;
+            color: white;
+        }
+
+        /* Wrapper: parent container for both boxes */
+        .wrapper {
+            background-color: blueviolet;
+            padding: 20px;
+        }
+
+        /* ===== Navigation Menu Styling ===== */
+        .nav {
+            background-color: black; /* Menu bar color */
+            overflow: hidden; /* Prevent floats from breaking layout */
+        }
+
+        .nav a {
+            text-decoration: none; /* Remove underline */
+            color: white; /* Default link color */
+            text-align: center;
+            padding: 20px;
+            float: left; /* Make links line up horizontally */
+        }
+
+        .nav a:hover {
+            color: red; /* Change color on mouse hover */
+        }
+
+        .nav a:visited {
+            color: purple; /* Color for visited links */
+        }
+
+        /* ===== Optional Paragraph Styling (currently off) ===== */
+        /*
+        p {
+            height: 200px;
+            width: 300px;
+            padding: 15px;
+            border: 6px solid black;
+            margin: 20px;
+        }
+        */
+    </style>
+</head>
+<body>
+
+    <!-- Wrapper containing two boxes -->
+    <div class="wrapper">
+        <div class="box1">Box 1</div>
+        <div class="box2">Box 2</div>
+    </div>
+
+    <!-- Ordered list example -->
+    <ol>
+        <li>list1</li>
+    </ol>
+
+    <!-- Paragraph with placeholder text -->
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        <!-- Truncated text for clarity -->
+    </p>
+
+    <!-- Navigation Menu -->
+    <div class="nav">
+        <a href="http://127.0.0.1:5500/newpage.html">About</a>
+        <a href="Contact.html">Contact</a>
+        <a href="info.html">Info</a>
+        <a href="privacy.html">Privacy Policy</a>
+    </div>
+
+</body>
+</html>

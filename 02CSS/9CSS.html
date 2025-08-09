@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox, Grid & Animations Tutorial</title>
+    <style>
+        /* ---------- GENERAL PAGE STYLES ---------- */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            padding: 0 20px 30px 0;
+            line-height: 1.4;
+        }
+
+        /* ---------- 1️⃣ FLEXBOX EXAMPLE ---------- */
+        .flex-container {
+            display: flex;                  /* Enables Flexbox layout */
+            width: 100%;
+            height: 500px;
+            border: 20px solid slateblue;
+
+            /* Uncomment to see direction changes:
+               flex-direction: column-reverse;
+               flex-wrap: wrap-reverse;
+            */
+
+            /* Aligns rows when there's wrapping */
+            align-content: space-between;
+        }
+
+        .flex-item {
+            width: 75px;
+            background-color: lightblue;
+            border: 2px solid darkblue;
+            text-align: center;
+            font-size: 2em;
+            color: white;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        /* Individual Flexbox item customization */
+        #flex-item-1 {
+            background-color: pink;
+            flex: 3 2 250px; /* grow = 3, shrink = 2, base width = 250px */
+            /* flex-grow: 2; */
+            /* flex-shrink: 2; */
+            /* align-self: stretch; */
+        }
+
+        #flex-item-2 { background-color: rgb(96, 17, 31); }
+        #flex-item-3 { background-color: rgb(79, 206, 106); }
+        #flex-item-4 { background-color: rgb(131, 109, 32); }
+        #flex-item-5 { background-color: rgb(228, 118, 136); }
+
+        /* ---------- 2️⃣ GRID EXAMPLE ---------- */
+        .grid-container {
+            display: grid; /* Enables Grid layout */
+
+            /* Responsive columns:
+               auto-fill = fill row with as many columns as possible
+               minmax(200px, 1fr) = each column at least 200px, can grow equally */
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+            /* Gap between items */
+            grid-gap: 20px;
+
+            /* Default row height */
+            grid-auto-rows: minmax(100px, auto);
+
+            /* Default column width if extra columns are added */
+            grid-auto-columns: minmax(50px, auto);
+        }
+
+        .grid-item {
+            background-color: rgb(188, 81, 131);
+            border: 3px solid green;
+            border-radius: 8px;
+            color: white;
+            font-size: 1.5em;
+            display: flex; /* For center alignment inside */
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ---------- 3️⃣ TRANSITION ANIMATION EXAMPLE ---------- */
+        .animated {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(5, 9, 145);
+
+            /* transition: property duration easing delay */
+            transition: width 2s, height 4s, border-radius 5s, background-color 5s;
+        }
+
+        .animated:hover {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%; /* Turns into a circle */
+            background-color: rgb(199, 24, 24);
+        }
+
+        /* ---------- 4️⃣ KEYFRAME ANIMATION EXAMPLE ---------- */
+        a.bouncing {
+            animation: bouncing 2s ease 0s infinite alternate both;
+
+            background: darkblue;
+            border-radius: 50%;
+            display: inline-block;
+            color: white;
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 300;
+            letter-spacing: 0.2rem;
+            padding: 1em 2em 1.1em;
+            position: relative; /* Required for 'bottom' animation */
+            text-decoration: none;
+            text-transform: uppercase;
+            vertical-align: top;
+            margin-top: 50px;
+        }
+
+        /* Keyframes define stages of animation */
+        @keyframes bouncing {
+            0% {
+                bottom: 0;
+                box-shadow: 0 0 5px rgb(43, 43, 43);
+            }
+            100% {
+                bottom: 50px;
+                box-shadow: 0 50px 50px rgb(23, 22, 22);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FLEXBOX DEMO -->
+    <h2>1️⃣ Flexbox Example</h2>
+    <div class="flex-container">
+        <div class="flex-item" id="flex-item-1">1</div>
+        <div class="flex-item" id="flex-item-2">2</div>
+        <div class="flex-item" id="flex-item-3">3</div>
+        <div class="flex-item" id="flex-item-4">4</div>
+        <div class="flex-item" id="flex-item-5">5</div>
+    </div>
+
+    <!-- GRID DEMO -->
+    <h2>2️⃣ CSS Grid Example</h2>
+    <div class="grid-container">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+    </div>
+
+    <!-- TRANSITION DEMO -->
+    <h2>3️⃣ Transition Animation Example</h2>
+    <div class="animated"></div>
+
+    <!-- KEYFRAME DEMO -->
+    <h2>4️⃣ Keyframe Animation Example</h2>
+    <a class="bouncing">Loading</a>
+
+</body>
+</html>

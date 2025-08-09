@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+<body>
+
+    <div class="container">This is for our arrow functions</div>
+
+    <script>
+        // 🏹 Arrow function — shortest way to write a function in JS
+        // No function keyword, no curly braces if single statement
+        let greet = () => console.log("Hello Good Evening"); // 😎 Compact & cool
+
+        greet(); // 🔔 Call the function → prints "Hello Good Evening"
+
+        // ⏳ setInterval runs the given function EVERY X milliseconds
+        setInterval(() => {
+            // console.log("we are inside setInterval"); // Example log
+            // alert("This is an alert"); // Example alert box
+        }, 3000); // 3000 ms = 3 seconds
+
+        // 🧮 Arrow function with parameters + return
+        // Long form: let sum = (a, b) => { return a + b; }
+        let sum = (a, b) => a + b; // Short form → auto return
+
+        // 📏 Arrow function with only ONE parameter → no need for ( )
+        let half = a => a / 2;
+
+        let halfof = half(8); // Calling the half function
+        console.log(halfof);  // Prints 4
+
+        // 📦 Object with method that uses `this`
+        let obj = {
+            names: ["CN", "DBMS", "SE"], // Array of subjects
+            speak() {
+                // ℹ `this` refers to obj here
+                // forEach loops over each subject in names[]
+                this.names.forEach((subject) => {
+                    console.log("Our subject: " + subject);
+                });
+            }
+        };
+
+        obj.speak(); // Calls speak() → prints all subjects
+
+        // 📌 Notes:
+        // - Arrow functions DO NOT have their own `this`
+        // - In forEach above, arrow function inherits `this` from speak()
+        // - If we used a normal function() there, `this` could be undefined
+    </script>
+   
+</body>
+</html>

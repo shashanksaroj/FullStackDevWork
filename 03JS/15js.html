@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+
+    <!-- 📦 JSON: JavaScript Object Notation -->
+    <!-- ✅ Used for data storage & transfer -->
+    <!-- ✅ Syntax: {} for objects, [] for arrays, key-value pairs in quotes -->
+    <!-- ✅ Language-independent format, but looks like JS objects -->
+
+    <script>
+        // 🎯 Step 1: Create a JS object
+        let jsonObj = {
+            name: "Arfain",
+            company: "XYZ",
+            location: "INDIA",
+            relocate: true, // Boolean value
+        }
+
+        console.log(jsonObj); // Shows normal JS object
+
+        // 🎯 Step 2: Convert JS object → JSON string
+        let jsonStr = JSON.stringify(jsonObj); 
+        console.log(jsonStr); // Output is a STRING, not an object
+
+        // 🎯 Step 3: Modify the string (just for demo)
+        jsonStr = jsonStr.replace("INDIA", "KSA"); // Replace location
+        console.log(jsonStr); // Still a STRING
+
+        // 🎯 Step 4: Convert JSON string → JS object again
+        let newJson = JSON.parse(jsonStr);
+        console.log(newJson); // Now it's a normal JS object again
+    </script>
+   
+</body>
+</html>

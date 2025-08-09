@@ -1,0 +1,56 @@
+
+<html>
+<head>
+    <title>Box Sizing Demo</title>
+</head>
+<body>
+
+    <!-- Box-sizing demonstration -->
+    <div class="content-box">Content box</div>
+    <br>
+    <div class="border-box">Border box</div>
+
+</body>
+</html>
+
+<style type="text/css">
+/* Basic styling applied to both boxes */
+div {
+    width: 160px;                 /* Content width (changes meaning based on box-sizing) */
+    height: 80px;                 /* Content height (changes meaning based on box-sizing) */
+    padding: 20px;                /* Space between content and border */
+    border: 8px solid red;        /* Border around the box */
+    background: yellow;           /* Background color of the content area */
+}
+
+/* --------- CONTENT-BOX ---------
+   Default behavior in CSS.
+   The width & height you set apply to *content only*.
+   Padding and border are added *outside* that size.
+---------------------------------- */
+.content-box {
+    box-sizing: content-box;
+    /* Total Width  = content + padding + border
+       = 160px + (2 × 20px padding) + (2 × 8px border)
+       = 160 + 40 + 16 = 216px total
+       
+       Total Height = content + padding + border
+       = 80px + 40 + 16 = 136px total
+    */
+}
+
+/* --------- BORDER-BOX ---------
+   The width & height you set apply to *content + padding + border*.
+   So padding & border shrink the actual content area.
+---------------------------------- */
+.border-box {
+    box-sizing: border-box;
+    /* Content width = total width - padding - border
+       = 160px - (2 × 20px) - (2 × 8px)
+       = 160 - 40 - 16 = 104px content
+
+       Content height = total height - padding - border
+       = 80px - 40 - 16 = 24px content
+    */
+}
+</style>

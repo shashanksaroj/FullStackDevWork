@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Debugging Example</title>
+    <style>
+        /* 
+        =============================
+        BASIC RESET
+        =============================
+        */
+        * {
+            margin: 0; /* Remove default browser margins */
+            padding: 0; /* Remove default browser paddings */
+        }
+
+        /* 
+        =============================
+        BODY STYLING
+        =============================
+        */
+        body {
+            font: 14px Georgia, serif; /* Font family + size */
+            background: #ccc; /* Light gray background */
+        }
+
+        /* HTML5 elements default to inline in old browsers — make them block */
+        article, aside, figure, footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        /* Headings */
+        h2 {
+            font: 24px Georgia;
+            margin: 0 0 10px 0; /* Bottom margin for spacing */
+        }
+        h3 {
+            margin: 0 0 8px 0;
+        }
+
+        /* Paragraphs */
+        p {
+            margin: 0 0 20px 0;
+            background-color: rgb(193, 202, 209);
+        }
+
+        /* 
+        =============================
+        LAYOUT CONTAINER
+        =============================
+        */
+        #fluid-wrap {
+            width: 70%; /* Take up 70% of browser width */
+            margin: 60px auto; /* Center horizontally */
+            padding: 20px;
+            background: #ccc;
+            overflow: hidden; /* Clears floats */
+        }
+
+        /* Sidebar (left column) */
+        #sidebar {
+            width: 35%; /* 35% of container */
+            float: left;
+        }
+        #sidebar ul {
+            list-style: none; /* Remove bullets */
+        }
+        #sidebar ul li a {
+            color: red;
+            text-decoration: none; /* Remove underline */
+            padding: 3px 0;
+            display: block; /* Make the whole link clickable */
+        }
+
+        /* 
+        =============================
+        RESPONSIVE DESIGN (MEDIA QUERIES)
+        =============================
+        */
+
+        /* Large screens (over 1000px wide) */
+        @media all and (min-width: 1001px) {
+            #sidebar ul li a:after {
+                /* Show actual email address */
+                content: "(" attr(data-email) ")";
+                font-size: 11px;
+                font-style: italic;
+                color: #666;
+            }
+        }
+
+        /* Medium screens (700px to 1000px) */
+        @media all and (max-width: 1000px) and (min-width: 700px) {
+            #sidebar ul li a:after {
+                /* Show word "Email:" instead */
+                content: " Email:";
+                font-style: italic;
+                color: #666;
+            }
+        }
+
+        /* Small screens (520px to 699px) AND very large screens (above 1151px) */
+        @media all and (max-width: 699px) and (min-width: 520px),
+               (min-width: 1151px) {
+            #sidebar ul li a {
+                padding-left: 21px;
+                background: url("memories-Logo.png") left center no-repeat;
+            }
+        }
+
+        /* Main content (right column) */
+        #main-content {
+            width: 65%; /* 65% of container */
+            float: right;
+        }
+
+        /*
+        =============================
+        DEBUGGING TIPS (as teacher taught)
+        =============================
+        1. Use browser developer tools (F12) to:
+           - Inspect element styles
+           - See which CSS rules are overriding others
+        2. If styles are not applying:
+           - Check for typos in selectors
+           - Check if a more specific selector is overriding your rule
+           - Use `outline: 1px solid red;` temporarily to see element boundaries
+        3. If layout is broken:
+           - Add `background-color` to elements to visualize their size
+           - Remove `float` temporarily to check normal flow
+        4. Use `/* comment */` to disable suspicious code blocks while testing
+        5. Always check media queries by resizing the browser
+        */
+    </style>
+</head>
+<body>
+    <div id="fluid-wrap">
+        <!-- SIDEBAR -->
+        <div id="sidebar">
+            <h3>Our WebPage</h3>
+            <ul id="nav">
+                <li><a data-email="arfainsabasaba@gmail.com" href="mailto:arfainsabasaba@gmail.com">Arfain Saba</a></li>
+                <li><a data-email="xyz@gmail.com" href="mailto:xyz@gmail.com">My Name</a></li>
+                <li><a data-email="xyz@gmail.com" href="mailto:xyz@gmail.com">Saba Arfain</a></li>
+            </ul>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div id="main-content">
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Laudantium dolores molestias reiciendis omnis? Illo maxime velit, 
+                totam minus inventore numquam unde error architecto?
+            </p>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                Sit accusamus esse voluptatum nihil dignissimos doloremque ipsa impedit.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

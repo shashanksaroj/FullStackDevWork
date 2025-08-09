@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Layout: Float & Position</title>
+<style>
+/* --- General Page Layout --- */
+body {
+    margin: 0 auto;       /* Center the content horizontally */
+    max-width: 900px;     /* Prevent the layout from being too wide */
+    width: 90%;           /* Make layout responsive */
+    font-family: Arial, sans-serif;
+}
+
+/* --- FLOAT EXAMPLE --- */
+#box {
+    float: left;          /* Makes the image "float" to the left so text wraps around it */
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    background-color: rgb(224, 233, 233);
+    padding: 1em;
+    margin-right: 15px;   /* Gap between image and text */
+}
+
+.special {
+    background-color: #2e95b8;
+    padding: 15px;
+    color: white;
+}
+
+/* Clear floats so next content starts below floated element */
+.cleared {
+    clear: left;  /* Forces this paragraph to start BELOW the floated image */
+}
+
+/* --- POSITION EXAMPLE --- */
+.box-set, .box {
+    border-radius: 6px;
+}
+
+.box-set {
+    background: whitesmoke;
+    height: 300px; /* Needed so absolutely positioned boxes have a container */
+    position: relative; /* Important: makes child boxes position relative to this container */
+    margin-top: 50px; /* Space between float example and position example */
+}
+
+.box {
+    position: absolute; /* Removes element from normal flow and positions it manually */
+    background-color: aquamarine;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    line-height: 80px; /* Center text vertically */
+    margin: 20px;
+    font-weight: bold;
+}
+
+/* Positioning examples */
+.box-1 {
+    top: 10px;    /* 10px from top of container */
+    left: 10px;   /* 10px from left */
+}
+.box-2 {
+    bottom: 10px; /* 10px from bottom */
+    left: 10px;
+}
+.box-3 {
+    top: 10px;
+    right: 10px;  /* 10px from right */
+}
+.box-4 {
+    bottom: 10px;
+    right: 10px;
+}
+</style>
+</head>
+<body>
+
+<!-- FLOAT EXAMPLE -->
+<h1>Float Property Example</h1>
+<img id="box" src="computer-user-icon-28.png" alt="User Icon">
+
+<h1 class="special">Portfolio</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis suscipit
+   id optio vero qui fuga inventore, perspiciatis hic sint natus eum
+   eligendi est in, laudantium laboriosam.</p>
+
+<p class="cleared">This paragraph has <strong>clear:left</strong>, so it will start below the floated image instead of wrapping around it. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod distinctio
+   odio at, vel placeat corrupti.</p>
+
+<!-- POSITION EXAMPLE -->
+<h1>Position Property Example</h1>
+<div class="box-set">
+    <div class="box box-1">Box1</div>
+    <div class="box box-2">Box2</div>
+    <div class="box box-3">Box3</div>
+    <div class="box box-4">Box4</div>
+</div>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt saepe
+   blanditiis maxime cum ut odit enim.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, debitis quo?</p>
+
+</body>
+</html>

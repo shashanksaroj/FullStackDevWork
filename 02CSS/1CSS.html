@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning CSS</title>
+
+    <style type="text/css">
+        /*
+        ===========================
+        🌟 CSS BASIC SELECTORS 🌟
+        ===========================
+        - property: value;  → basic CSS rule format
+        - Ways to apply CSS:
+            1. Inline   → inside HTML element (style="...")
+            2. Internal → inside <style> tag in HTML
+            3. External → separate .css file linked via <link>
+        */
+
+        /*
+        ======================
+        🎯 SELECTOR TYPES
+        ======================
+
+        1️⃣ Combined Selectors → style multiple types of elements together
+            Example: h1.special, li.special { ... }
+
+        2️⃣ Class Selector → targets elements with specific class
+            Example: .classname { color: red; }
+
+        3️⃣ ID Selector → targets element with specific id
+            Example: #idname { font-size: 20px; }
+
+        4️⃣ Attribute Selector → targets elements with a given attribute
+            Example: a[href="https://example.com"] { color: blue; }
+
+        5️⃣ Pseudo-class Selector → targets elements in a specific state
+            Example: a:hover { background: yellow; }
+
+        6️⃣ Pseudo-element Selector → targets specific part of element
+            Example: p::first-line { font-weight: bold; }
+
+        7️⃣ Combinator Selectors:
+            - Descendant: article p { ... } → any <p> inside <article>
+            - Direct Child: article > p { ... } → <p> directly inside <article>
+            - Adjacent Sibling: h1 + p { ... } → <p> immediately after <h1>
+            - General Sibling: h1 ~ p { ... } → all <p> after <h1>
+
+        8️⃣ Universal Selector → * { ... } → targets ALL elements
+        */
+
+        /* Example Combined Selector */
+        /* h1.special, li.special {
+            color: blue;
+            font-weight: bold;
+        } */
+
+        /* Example Descendant Selector */
+        /* li em {
+            color: aliceblue;
+            background-color: black;
+        } */
+
+        /* Example Adjacent Sibling Selector */
+        /* h1 + p {
+            color: blueviolet;
+        } */
+
+        /* Example Pseudo-class Selector */
+        /* a:hover {
+            color: red;
+            background-color: rgb(174, 213, 246);
+        } */
+
+        /* Example Complex Selector */
+        /* body h1 + p .special {
+            color: darkblue;
+            background-color: aquamarine;
+        } */
+
+        /* Example ID Selector */
+        /* #heading {
+            color: burlywood;
+        } */
+
+        /* Example Specific ID for p */
+        /* p#idselector {
+            color: yellowgreen;
+            background-color: brown;
+        } */
+
+        /* Example Attribute Selector (contains word "a") */
+        /* li[class~="a"] {
+            color: antiquewhite;
+        } */
+
+        /* Universal selector → affects EVERY element */
+        * {
+            list-style: none; /* removes bullets from lists */
+            color: blue;      /* all text becomes blue */
+        }
+    </style>
+</head>
+<body>
+
+    <article>
+        <h1>Heading Example</h1>
+        <p>First paragraph inside article</p>
+        <span>Example span</span>
+
+        <div>
+            <p>Paragraph inside div</p>
+            <p>Another paragraph inside div</p>
+        </div>
+    </article>
+
+</body>
+</html>
