@@ -5,6 +5,54 @@
     <meta charset="UTF-8">
     <title>CSS Debugging Example</title>
     <style>
+/*
+===================================
+BOX-SIZING EXPLANATION (TEACHING)
+===================================
+
+👉 By default, elements use `box-sizing: content-box`.
+   This means:
+     - width/height = ONLY content
+     - padding & border are added OUTSIDE it
+
+   So,
+     width = content
+     actual box = content + padding + border
+
+✅ But when we use `box-sizing: border-box`,
+   the padding and border are INCLUDED inside the box size.
+
+   So,
+     width = content + padding + border (all packed inside!)
+     No overflow surprises 💥
+
+🔧 Example:
+-------------------------------------
+.box1 {
+  width: 300px;
+  padding: 20px;
+  border: 5px solid black;
+  box-sizing: content-box;  ← (default)
+}
+// Final width = 300 + 40 + 10 = 350px
+
+.box2 {
+  width: 300px;
+  padding: 20px;
+  border: 5px solid black;
+  box-sizing: border-box;
+}
+// Final width = exactly 300px ✅
+-------------------------------------
+
+🛠️ RECOMMENDED RESET:
+Apply this globally to avoid layout headaches:
+-------------------------------------
+* {
+  box-sizing: border-box;
+}
+-------------------------------------
+*/
         /* 
         =============================
         BASIC RESET
