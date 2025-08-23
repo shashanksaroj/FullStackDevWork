@@ -1,0 +1,51 @@
+⚛️ React useState Hook
+
+The React useState Hook lets you track state in a function component.
+
+📝 State refers to data or properties that need to be tracked in your app.
+
+📥 Importing useState
+
+To use useState, import it from React:
+
+import { useState } from "react";
+
+
+💡 useState is a named export, so we use destructuring.
+
+⚡ Initializing useState
+
+useState accepts an initial value and returns two things:
+
+🟢 The current state.
+
+🔄 A function to update the state.
+
+Example:
+
+import { useState } from "react";
+
+function FavoriteColor() {
+  const [color, setColor] = useState("red"); // 🟢 color is state, 🔄 setColor updates it
+
+  const handleClick = () => {
+    setColor("blue"); // 🔄 Update the state
+  };
+
+  return (
+    <div>
+      <p>My favorite color is {color}</p>
+      <button onClick={handleClick}>Change Color</button>
+    </div>
+  );
+}
+
+💡 Explanation
+
+color → 🟢 current state
+
+setColor → 🔄 function to update state
+
+"red" → 🎯 initial state
+
+✅ You can name the variables anything, but descriptive names make your code easier to read.
