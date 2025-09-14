@@ -1,0 +1,120 @@
+🌟 React Notes (Beginner Core)
+🚀 1. First React App
+
+Install Node.js ✅
+
+Create app:
+
+npx create-react-app my-app
+cd my-app
+npm start
+
+
+Boom 💥 — React dev server runs & browser opens.
+
+🌀 2. JSX vs HTML
+
+JSX = JavaScript + XML (HTML-like but smarter).
+
+className 👉 not class
+
+onClick 👉 not onclick
+
+{} = inject JavaScript
+
+Always 1 parent element returned
+
+👉 Think of JSX as HTML with superpowers 🦸.
+
+🧩 3. Types of Components
+
+Functional Components
+
+function Hello(props) {
+  return <h1>Hello {props.name}</h1>;
+}
+
+
+✅ Simple, fast, use hooks.
+
+Class Components
+
+class Hello extends React.Component {
+  render() {
+    return <h1>Hello {this.props.name}</h1>;
+  }
+}
+
+
+🕰️ Old school, has lifecycle methods.
+
+📦 4. Import & Export
+
+Default Export (one thing per file):
+
+export default MyComp;
+import MyComp from "./MyComp";
+
+
+Named Export (many per file):
+
+export const Button = () => {};
+import { Button } from "./Button";
+
+🎨 5. Adding Bootstrap
+
+Install:
+
+npm install bootstrap
+
+
+Import CSS in entry file:
+
+import "bootstrap/dist/css/bootstrap.min.css";
+
+
+Use class:
+
+<button className="btn btn-primary">Click Me</button>
+
+🎁 6. Props (Properties)
+
+Pass data parent ➝ child.
+
+Example:
+
+<Greeting name="Shashank" />
+function Greeting(props) {
+  return <h1>Hello {props.name}</h1>;
+}
+
+
+💡 Think: Props = arguments to functions.
+
+🛡️ 7. PropTypes
+
+For type checking (catch bugs 🐞 early).
+
+Install:
+
+npm install prop-types
+
+
+Example:
+
+import PropTypes from "prop-types";
+
+Greeting.propTypes = {
+  name: PropTypes.string.isRequired,
+};
+
+⚙️ 8. Default Props & isRequired
+
+Default Props = fallback value 🎯
+
+Greeting.defaultProps = {
+  name: "Guest",
+};
+
+
+isRequired = must pass prop else warning 🚨

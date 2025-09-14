@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./Navbar";
+import About from "./About";
 import TextForm from "./TextForm";
 function App() {
   //functional based---->js which return -->jsx ->no state,stateless -> it uses react hook
@@ -30,9 +31,9 @@ function App() {
 
       <Navbar title="My Qna" link="Linkink" />
 
-      <TextForm heading="enter the text" />
+      {/* <TextForm heading="enter the text" /> */}
+    <About/>
     </>
-    //there is error if remove this unlike html
   );
 }
 

@@ -7,7 +7,7 @@ import React from "react";
 export default function Navbar(props) {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg navbar-black bg-dark">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             {props.title}
@@ -96,7 +96,7 @@ Navbar.propTypes = {
 }
 
 //ye tab hoga jb hum value nahi bhjengein
-Navbar.defaultProps={
+Navbar.defaultProps = {
 
-  title:"set title name"
+  title: "set title name"
 }
