@@ -34,7 +34,11 @@ export default function TextForm(props) {
 
   return (
     <>
-      <div>
+      <div
+        className="container"
+        style={{ color: props.mode === "dark" ? "white" : "black" }}
+      >
+
         <h1>{props.heading}</h1>
         <div className="mb-3">
           <label for="exampleFormControlTextarea1" className="form-label">
@@ -46,6 +50,10 @@ export default function TextForm(props) {
             rows="8"
             value={text}
             onChange={handleOnChange}
+            style={{
+              color: props.mode == 'dark' ? 'white' : 'black',
+              backgroundColor: props.mode === "dark" ? "grey" : "white",
+            }}
           >
             {props.heading}
           </textarea>
@@ -72,8 +80,8 @@ export default function TextForm(props) {
         </button>
       </div>
       <div>
-        <div className="container"></div>
-
+        <div className="container my-4"
+          style={{ color: props.mode == 'dark' ? 'white' : 'black' }}></div>
 
         <h1>your text summary</h1>
         <p>
@@ -83,7 +91,7 @@ export default function TextForm(props) {
       </div>
 
       <h2>preview</h2>
-      <p>  { }</p>
+      <p>{text.length > 0 ? text : "Nothing to preview!"}</p>
     </>
   );
 }

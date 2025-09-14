@@ -1,13 +1,12 @@
 import "./App.css";
 import PropTypes from 'prop-types';
 
-
-import React from "react";
+//import React from "react";
 
 export default function Navbar(props) {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-black bg-dark">
+      <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             {props.title}
@@ -72,7 +71,7 @@ export default function Navbar(props) {
                 </a>
               </li>
             </ul>
-            <form className="d-flex" role="search">
+            {/*<form className="d-flex" role="search">
               <input
                 className="form-control me-2"
                 type="search"
@@ -82,7 +81,13 @@ export default function Navbar(props) {
               <button className="btn btn-outline-success" type="submit">
                 Search
               </button>
-            </form>
+            </form>*/}
+
+            <div class={`form-check form-switch-${props.mode == 'light' ? 'dark' : 'white'}`} >
+              <input className="form-check-input" type="checkbox" role="switch" id="switchCheckDefault" onClick={props.toggleMode} />
+              <label className="form-check-label" htmlfor="switchCheckDefault">switch mode</label>
+            </div>
+
           </div>
         </div>
       </nav>
